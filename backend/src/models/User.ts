@@ -6,11 +6,16 @@ interface IUser extends Document {
   password: string;
 }
 
-const UserSchema: Schema = new Schema({
-  name: { type: String, required: true },
-  cpf: { type: String, required: true },
-  password: { type: String, required: true },
-});
+const UserSchema: Schema = new Schema(
+  {
+    name: { type: String, required: true },
+    cpf: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const User: Model<IUser> = model('User', UserSchema);
 

@@ -19,8 +19,12 @@ const UserController = {
 
     const hashedPassword = await hash(body.password, 8);
 
+    const user = { ...body, password: hashedPassword };
+
     try {
-      const user = await User.create({ ...body, password: hashedPassword });
+      await User.create(user);
+
+      delete user.password;
 
       return res.status(200).json({
         message: `✅ User created successfully!`,
