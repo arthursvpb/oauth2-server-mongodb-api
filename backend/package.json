@@ -12,14 +12,15 @@
     "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "express-openid-connect": "^2.3.1",
-    "mongoose": "^5.12.8"
+    "mongoose": "^5.12.8",
+    "oauth2-server": "^3.1.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
     "@types/mongoose": "^5.10.5",
+    "@types/oauth2-server": "^3.0.12",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "eslint": "^7.26.0",

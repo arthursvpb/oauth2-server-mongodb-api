@@ -8,8 +8,9 @@ interface IUser extends Document {
 
 const UserSchema: Schema = new Schema(
   {
+    // USERNAME === CPF
+    username: { type: String, required: true, unique: true },
     name: { type: String, required: true },
-    cpf: { type: String, required: true, unique: true },
     password: { type: String, required: true },
   },
   {
