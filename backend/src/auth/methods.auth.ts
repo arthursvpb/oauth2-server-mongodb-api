@@ -2,6 +2,8 @@ import User from '../models/User';
 import Client from '../models/Client';
 import Token from '../models/Token';
 
+import { compare } from 'bcryptjs';
+
 /*
  * Methods used by all grant types.
  */
@@ -76,8 +78,17 @@ const getUser = async (username: string, password: string) => {
   try {
     const user = await User.findOne({
       username: username,
-      password: password,
     }).lean();
+
+    if (!user) {
+      throw new Error('Incorrect credentials.');
+    }
+
+    const isValid = await compare(password, user.password);
+
+    if (!isValid) {
+      throw new Error('Incorrect credentials.');
+    }
 
     return user;
   } catch {
