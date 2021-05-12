@@ -1,5 +1,4 @@
 import Client from '../models/Client';
-import User from '../models/User';
 
 export default function () {
   const client = new Client({
@@ -10,23 +9,10 @@ export default function () {
     redirectUris: [],
   });
 
-  const user = new User({
-    username: '111.111.111-11',
-    name: 'test',
-    password: 'test',
-  });
-
   client.save(function (err, client) {
     if (err) {
       return console.error(err);
     }
     console.log('Created client', client);
-  });
-
-  user.save(function (err, user) {
-    if (err) {
-      return console.error(err);
-    }
-    console.log('Created user', user);
   });
 }

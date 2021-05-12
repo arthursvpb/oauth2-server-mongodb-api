@@ -19,7 +19,7 @@ const publicPaths = ['/', '/api/auth'];
 export async function authenticateRequest(req, res, next) {
   const { url, method } = req;
 
-  if (publicPaths.includes(url) || (url === '/api/auth' && method === 'POST')) {
+  if (publicPaths.includes(url) || (url === '/users' && method === 'POST')) {
     return next();
   }
 
