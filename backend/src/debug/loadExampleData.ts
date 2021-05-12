@@ -11,7 +11,7 @@ export default function () {
   });
 
   const user = new User({
-    username: '41',
+    username: '111.111.111-11',
     name: 'test',
     password: 'test',
   });

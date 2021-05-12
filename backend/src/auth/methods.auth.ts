@@ -6,40 +6,43 @@ import Token from '../models/Token';
  * Methods used by all grant types.
  */
 
-const getAccessToken = (token, callback) => {
-  Token.findOne({
-    accessToken: token,
-  })
-    .lean()
-    .exec(
-      function (callback, err, token) {
-        if (!token) {
-          console.error('Token not found.');
-        }
+// @ts-ignore
+const getAccessToken = async token => {
+  try {
+    const accessToken = await Token.findOne({
+      accessToken: token,
+    }).lean();
 
-        callback(err, token);
-      }.bind(null, callback),
-    );
+    if (!accessToken) {
+      console.error('Token not found.');
+    }
+
+    return accessToken;
+  } catch {
+    console.error;
+  }
 };
 
-const getClient = function (clientId, clientSecret, callback) {
-  Client.findOne({
-    clientId: clientId,
-    clientSecret: clientSecret,
-  })
-    .lean()
-    .exec(
-      function (callback, err, client) {
-        if (!client) {
-          console.error('Client not found.');
-        }
+// @ts-ignore
+const getClient = async (clientId, clientSecret) => {
+  try {
+    const client = await Client.findOne({
+      clientId: clientId,
+      clientSecret: clientSecret,
+    }).lean();
 
-        callback(err, client);
-      }.bind(null, callback),
-    );
+    if (!client) {
+      console.error('Client not found.');
+    }
+
+    return client;
+  } catch {
+    console.error;
+  }
 };
 
-const saveToken = function (token, client, user, callback) {
+// @ts-ignore
+const saveToken = (token, client, user, callback) => {
   token.client = {
     id: client.clientId,
   };
@@ -50,6 +53,7 @@ const saveToken = function (token, client, user, callback) {
 
   const tokenInstance = new Token(token);
   tokenInstance.save(
+    // @ts-ignore
     function (callback, err, token) {
       if (!token) {
         console.error('Token not saved');
@@ -77,7 +81,7 @@ const getUser = async (username: string, password: string) => {
 
     return user;
   } catch {
-    console.log;
+    console.error;
   }
 };
 
