@@ -16,13 +16,13 @@ This project was built using the following technologies:
 
 It is necessary having Git, MongoDB, Node and Yarn (you shouldn't use NPM in this project).
 
-1. Clone this project
+1. Clone this project.
 
 ```sh
 git clone https://github.com/arthursvpb/OAuth2-Server-MongoDB-API.git
 ```
 
-2. Install required packages
+2. Install required packages.
 
 ```sh
 yarn
@@ -30,11 +30,23 @@ yarn
 
 3. Create `.env` file using `.env.example`.
 
-4. Start the server
+4. Start the server.
 
 ```sh
 yarn dev:server
 ```
+
+## 🏁 Endpoints
+
+### Authentication
+
+| Method | Path         | Description                                         |
+| :----- | :----------- | :-------------------------------------------------- |
+| `POST` | ` /api/auth` | Authenticate the User and return token information. |
+
+### Users
+
+### Transactions
 
 ## 📝 License
 
