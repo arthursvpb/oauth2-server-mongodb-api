@@ -8,6 +8,8 @@ const UserController = {
     try {
       const users = await User.find();
 
+      console.log(req.headers.loggedUser);
+
       return res.status(200).json(users);
     } catch ({ message }) {
       return res.status(400).json({ message });

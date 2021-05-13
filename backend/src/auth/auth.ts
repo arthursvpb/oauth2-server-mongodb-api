@@ -27,7 +27,9 @@ export async function authenticateRequest(req, res, next) {
   const response = new Response(res);
 
   try {
-    await app.oauth.authenticate(request, response);
+    const { user } = await app.oauth.authenticate(request, response);
+
+    req.headers.loggedUser = user.username;
 
     return next();
   } catch ({ message }) {
