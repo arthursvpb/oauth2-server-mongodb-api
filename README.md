@@ -103,13 +103,17 @@ password: "my-strong-password"
 
 **Body example**:
 
-- `amount`: 2000
+```json
+amount: 2000
+```
 
 `POST /transactions/credit` - Perform credit operation.
 
 **Body example**:
 
-- `amount`: 2000
+```json
+amount: 2000
+```
 
 `GET /transactions/history` - Show the history of debit and credit transactions.
 
