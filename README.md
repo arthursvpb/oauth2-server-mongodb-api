@@ -73,9 +73,7 @@ yarn dev:server
 
 ### Users
 
-#### Create
-
-`POST` **/users** - Register a new user to database.
+`POST /users` - Register a new user to database.
 
 **Body example**:
 
@@ -83,35 +81,25 @@ yarn dev:server
 - `username`: "146.282.284-00"
 - `password`: "my-strong-password"
 
-#### Index
+`GET /users` - Show all users registered.
 
-`GET` **/users** - Show all users registered.
-
-#### Show
-
-`GET` **/users/profile** - Show the current logged user.
+`GET /users/profile` - Show the current logged user.
 
 ### Transactions
 
-#### Debit operation
-
-`POST` **/transactions/debit** - Perform debit operation.
+`POST /transactions/debit` - Perform debit operation.
 
 **Body example**:
 
 - `amount`: 2000
 
-#### Credit operation
-
-`GET` **/transactions/credit** - Perform credit operation.
+`POST /transactions/credit` - Perform credit operation.
 
 **Body example**:
 
 - `amount`: 2000
 
-#### History
-
-`GET` **/transactions/history** - Show the history of debit and credit transactions.
+`GET /transactions/history` - Show the history of debit and credit transactions.
 
 ## 📝 License
 
