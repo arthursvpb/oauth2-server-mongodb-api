@@ -44,7 +44,7 @@ yarn dev:server
 | :----- | :----------- | :-------------------------------------------------- |
 | `POST` | ` /api/auth` | Authenticate the User and return token information. |
 
-**Body example**:
+**Body example in `x-www-form-urlencoded`**:
 
 - `username`: "146.282.284-00"
 - `password`: "my-strong-password"
@@ -69,7 +69,21 @@ yarn dev:server
 }
 ```
 
+**After authentication, you must use `Bearer {accessToken}` on Authorization header.**
+
 ### Users
+
+`POST` **/users** - Register a new user to database.
+
+**Body example**:
+
+- `name`: "Arthur Vasconcellos"
+- `username`: "146.282.284-00"
+- `password`: "my-strong-password"
+
+`GET` **/users** - Show all users registered.
+
+`GET` **/users/profile** - Show the current logged user.
 
 ### Transactions
 
