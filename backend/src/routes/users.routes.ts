@@ -6,5 +6,6 @@ const usersRouter = Router();
 
 usersRouter.get('/', UserController.index);
 usersRouter.post('/', UserController.create);
+usersRouter.get('/profile', UserController.show);
 
 export default usersRouter;

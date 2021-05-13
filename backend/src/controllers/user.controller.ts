@@ -36,6 +36,20 @@ const UserController = {
       return res.status(400).json({ message });
     }
   },
+  async show(req: Request, res: Response) {
+    const { loggedUser } = req.headers;
+
+    try {
+      const user = await User.findOne({ username: loggedUser }).lean();
+
+      // @ts-ignore
+      delete user.password;
+
+      return res.status(200).json({ data: user });
+    } catch ({ message }) {
+      return res.status(400).json({ message });
+    }
+  },
 };
 
 export default UserController;
