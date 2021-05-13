@@ -9,7 +9,7 @@ import cors from 'cors';
 
 import { authenticateRequest } from './auth/auth';
 
-import loadExampleData from './debug/loadExampleData';
+// import loadExampleData from './debug/loadExampleData';
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-loadExampleData();
+// loadExampleData();
 
 app.use(authenticateRequest);
 app.use(routes);

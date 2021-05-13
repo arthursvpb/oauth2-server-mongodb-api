@@ -4,6 +4,10 @@ interface IUser extends Document {
   name: string;
   cpf: string;
   password: string;
+  balance: number;
+  limit: number;
+  invoice: number;
+  history: Array<Object>;
 }
 
 const UserSchema: Schema = new Schema(
@@ -12,7 +16,12 @@ const UserSchema: Schema = new Schema(
     username: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     password: { type: String, required: true },
-    balance: { type: String, default: 100000 },
+    balance: { type: Number, default: 10000.0 },
+    limit: { type: Number, default: 15000.0 },
+    invoice: { type: Number, default: 0 },
+    history: [
+      { transactionDate: Date, amount: Number, transactionType: String },
+    ],
   },
   {
     timestamps: true,

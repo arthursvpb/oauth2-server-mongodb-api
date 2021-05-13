@@ -36,6 +36,7 @@ const UserController = {
       return res.status(400).json({ message });
     }
   },
+
   async show(req: Request, res: Response) {
     const { loggedUser } = req.headers;
 
