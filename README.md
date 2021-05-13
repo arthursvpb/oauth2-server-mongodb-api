@@ -28,12 +28,13 @@ git clone https://github.com/arthursvpb/OAuth2-Server-MongoDB-API.git
 yarn
 ```
 
-3. Start the server
+3. Create `.env` file using `.env.example`.
+
+4. Start the server
 
 ```sh
 yarn dev:server
 ```
-
 
 ## 📝 License
 
