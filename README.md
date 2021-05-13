@@ -2,8 +2,6 @@
 
 This project is a Node.js API to simulate a secure bank environment. It is using OAuth2 Access Token to request operations and storing data to MongoDB.
 
-<hr>
-
 ## 🛠️ Tecnologies
 
 This project was built using the following technologies:
@@ -13,8 +11,6 @@ This project was built using the following technologies:
 - [TypeScript](https://www.typescriptlang.org/)
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
-
-<hr>
 
 ## ▶️ Running
 
@@ -39,8 +35,6 @@ yarn
 ```sh
 yarn dev:server
 ```
-
-<hr>
 
 ## 🏁 Endpoints
 
