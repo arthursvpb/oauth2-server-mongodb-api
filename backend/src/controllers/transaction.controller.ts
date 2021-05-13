@@ -36,7 +36,7 @@ const TransactionController = {
           .json({ message: 'Insufficient credit limit! =(' });
       }
 
-      return res.status(400).json({ message: 'Credit operation successful.' });
+      return res.status(200).json({ message: 'Credit operation successful.' });
     } catch ({ message }) {
       return res.status(400).json({ message });
     }
@@ -73,15 +73,18 @@ const TransactionController = {
         return res.status(400).json({ message: 'Insufficient money! =(' });
       }
 
-      return res.status(400).json({ message: 'Debit operation successful.' });
+      return res.status(200).json({ message: 'Debit operation successful.' });
     } catch ({ message }) {
       return res.status(400).json({ message });
     }
   },
 
   async showHistory(req: Request, res: Response) {
+    const { loggedUser } = req.headers;
     try {
-      // return res.status(200).json(users);
+      const user = await User.findOne({ username: loggedUser }).lean();
+
+      return res.status(200).json({ data: user?.history });
     } catch ({ message }) {
       return res.status(400).json({ message });
     }
