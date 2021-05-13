@@ -2,6 +2,8 @@
 
 This project is a Node.js API to simulate a secure bank environment. It is using OAuth2 Access Token to request operations and storing data to MongoDB.
 
+<hr>
+
 ## 🛠️ Tecnologies
 
 This project was built using the following technologies:
@@ -11,6 +13,8 @@ This project was built using the following technologies:
 - [TypeScript](https://www.typescriptlang.org/)
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
+
+<hr>
 
 ## ▶️ Running
 
@@ -35,6 +39,8 @@ yarn
 ```sh
 yarn dev:server
 ```
+
+<hr>
 
 ## 🏁 Endpoints
 
@@ -71,19 +77,25 @@ yarn dev:server
 
 **After authentication, you must use `Bearer {accessToken}` on Authorization header.**
 
+<hr>
+
 ### Users
 
 `POST /users` - Register a new user to database.
 
 **Body example**:
 
-- `name`: "Arthur Vasconcellos"
-- `username`: "146.282.284-00"
-- `password`: "my-strong-password"
+```json
+name: "Arthur Vasconcellos"
+username: "146.282.284-00"
+password: "my-strong-password"
+```
 
 `GET /users` - Show all users registered.
 
 `GET /users/profile` - Show the current logged user.
+
+<hr>
 
 ### Transactions
 
@@ -100,6 +112,8 @@ yarn dev:server
 - `amount`: 2000
 
 `GET /transactions/history` - Show the history of debit and credit transactions.
+
+<hr>
 
 ## 📝 License
 
