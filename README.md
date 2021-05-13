@@ -44,6 +44,31 @@ yarn dev:server
 | :----- | :----------- | :-------------------------------------------------- |
 | `POST` | ` /api/auth` | Authenticate the User and return token information. |
 
+**Body example**:
+
+- `username`: "146.282.284-00"
+- `password`: "my-strong-password"
+- `grant_type`: "password"
+- `client_id`: "client_id"
+- `client_secret`: "client_id"
+
+**Successful response example**:
+
+```json
+{
+  "accessToken": "c24f807266f8b2d8d9b493f05130af272164b891",
+  "accessTokenExpiresAt": "2021-05-13T15:45:06.736Z",
+  "refreshToken": "d22c029956d43079804e92523f51d6ffde2dff74",
+  "refreshTokenExpiresAt": "2021-05-27T14:45:06.736Z",
+  "client": {
+    "id": "client_id"
+  },
+  "user": {
+    "username": "146.282.284-00"
+  }
+}
+```
+
 ### Users
 
 ### Transactions
