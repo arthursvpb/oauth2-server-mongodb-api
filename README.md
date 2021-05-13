@@ -50,7 +50,7 @@ yarn dev:server
 - `password`: "my-strong-password"
 - `grant_type`: "password"
 - `client_id`: "client_id"
-- `client_secret`: "client_id"
+- `client_secret`: "client_secret"
 
 **Successful response example**:
 
