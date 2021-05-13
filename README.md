@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologies">Tecnologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-running">Running</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-endpoints">Endpoints</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
@@ -18,7 +18,7 @@
 
 This project is a Node.js API to simulate a secure bank environment. It is using OAuth2 Access Token to request operations and storing data to MongoDB.
 
-## 🛠️ Tecnologies
+## 🛠️ Technologies
 
 This project was built using the following technologies:
 
